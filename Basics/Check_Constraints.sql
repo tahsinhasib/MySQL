@@ -1,16 +1,11 @@
 
----------------------------------------------------------------------------------
 /*
    The CHECK constraint is used to limit the
     value range that can be placed in a column. If
     you define a  CHECK constraint  on a single
     column it allows only certain values for this
     column.
-
-    <col> <data>(size) CONSTRAINT <con name> CHECK(condition)........
-
 */
----------------------------------------------------------------------------------
 
 
 CREATE TABLE STUDENT(
