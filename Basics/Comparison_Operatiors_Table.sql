@@ -27,24 +27,6 @@ FROM EMPLOYEES
 
     The IN operator allows you to specify multiple values in a WHERE clause.
     The IN operator is a shorthand for multiple OR conditions.
-
-
-    SELECT <col name>, <col name> 
-    FROM <table name> 
-    WHERE <col name> BETWEEN.......AND........
-
-
-    SELECT * 
-    FROM <table name> 
-    WHERE <col name> LIKE '.....'
-
-
-    SELECT <col name>, <col name>
-    FROM <table name> 
-    WHERE <col name> IS NULL
-
-
-
 */
 --------------------------------------------------------------------------------
 
@@ -73,7 +55,6 @@ FROM EMPLOYEES
 WHERE DEPARTMENT_ID <> 30
 
 --------------------------------------------------------------
-
 
 SELECT FIRST_NAME, HIRE_DATE 
 FROM EMPLOYEES 
