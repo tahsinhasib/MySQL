@@ -37,9 +37,12 @@ all employees.
 
 */
 
-select *
-from emp
+---------------------------------------------
+-- Subquery from scott user:
+-----------------------------
 
+SELECT *
+FROM EMP
 
 1.
 SELECT ENAME
@@ -52,12 +55,57 @@ WHERE HIREDATE > (
 
 
 2.
-SELECT ENAME
+SELECT ENAME, SAL
 FROM EMP
-WHERE SAL < (
+WHERE SAL > ALL (
     SELECT SAL
     FROM EMP
-    WHERE ENAME = 'CLERK'
+    WHERE JOB = 'CLERK'
 )
 
-SELECT ENAME, 
+
+SELECT SAL
+FROM EMP
+WHERE JOB = 'CLERK'
+
+
+3.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > ANY (
+    SELECT SAL
+    FROM EMP
+    WHERE JOB = 'CLERK'
+)
+
+
+4.
+SELECT ENAME
+FROM EMP
+WHERE SAL IN (
+    SELECT MAX(SAL)
+    FROM EMP
+    GROUP BY DEPTNO
+)
+
+
+
+5.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (
+    SELECT SAL
+    FROM EMP
+    WHERE ENAME = 'SMITH'
+)
+
+SELECT ENAME, SAL
+FROM EMP
+WHERE ENAME = 'SMITH'
+
+
+
+------------------------------------------------------
+-- Joining for user scott
+---------------------------------
+
