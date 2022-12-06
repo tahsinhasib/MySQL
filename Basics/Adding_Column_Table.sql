@@ -24,5 +24,3 @@ ALTER TABLE AIUB ADD (
 );
    
 
-
-
