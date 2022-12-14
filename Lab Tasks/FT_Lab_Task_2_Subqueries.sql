@@ -133,16 +133,18 @@ WHERE SALARY < (
 
 
 12.
-SELECT FIRST_NAME, SALARY, DEPARTMENT_ID
-FROM EMPLOYEES
-WHERE SALARY < (
-    SELECT AVG(SALARY)
-    FROM EMPLOYEES
-    WHERE DEPARTMENT_ID IN (
-        SELECT DEPARTMENT_ID
-        FROM EMPLOYEES
-        WHERE FIRST_NAME = 'Kevin'
-    )
+select first_name,
+       salary,
+       department_id
+from employees
+where department_id in(
+    select department_id
+    from departments
+    where location_id in(
+        select location_id
+        from locations
+        where city = 'Seattle'
+  )
 )
 
 
@@ -160,18 +162,3 @@ WHERE SALARY < (
 )
 
 
-
-
-select first_name,
-       salary,
-       department_id
-from employees
-where department_id in(
-   select department_id
-   from departments
-   where location_id in(
-      select location_id
-      from locations
-      where city = 'Seattle'
-  )
-)
