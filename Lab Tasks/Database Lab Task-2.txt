@@ -3,8 +3,6 @@ MD.TAHSIN HASIB 22-46026-1
 Lab Task - 2
 ------------------------
 
-
-
 Questions
 --------------------------------------------------------------------------------------------------------
 1. Create a query to display the name(first and last) and salary concatenated in such a way that data shows like the below pattern: "Steven king gets salary $24000"
